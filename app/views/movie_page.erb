@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @movie_info[0]["title"] %></title>
+    <link rel="stylesheet" href="/home.css">
+  </head>
+
+  <body>
+
+    <h1><%= @movie_info[0]["title"] %> (<%= @movie_info[0]["year"] %>)</h1>
+
+    <h3>A(n) <%= @movie_info[0]["genre"] %> created/filmed at <%= @movie_info[0]["studio"]%></h3>
+    <i><h4><%= @movie_info[0]["synopsis"] %></h4><i>
+
+    <% @cast_info.each do |actor| %>
+      <ul>
+        <li><b>ROLE: </b> <%= actor["role"] %><br>
+        <b>PLAYED BY: </b><a href="/actors/<%= actor["id"] %>"><%= actor["actor"] %></a>
+      </ul>
+    <% end %>
+    <br><br>
+
+    <a href="/movies">All Movies</a>&emsp;
+    <a href="/actors">All Actors</a>
+
+  </body>
+</html>

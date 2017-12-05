@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @actor[0]["name"] %></title>
+    <link rel="stylesheet" href="/home.css">
+  </head>
+
+  <body>
+    <h1>
+      <%= @actor[0]["name"] %>
+    </h1>
+
+    <h2> Movies </h2>
+    <ul>
+      <% @movies_with_role.each do |movie| %>
+        <% if !movie["character"].nil? %>
+          <li><a href="/movies/<%= movie["id"] %>"><%= movie["title"] %></a>
+            <ul><li> <%= movie["character"] %></li></ul><br><br>
+        <% else %>
+          <li><a href="/movies/<%= movie["id"] %>"><%= movie["title"] %></a><br><br><br>
+        <% end %>
+      <% end %>
+    </ul><br><br>
+
+    <a href="/movies">All Movies</a>&emsp;
+    <a href="/actors">All Actors</a><br><br>
+  </body>
+</html>

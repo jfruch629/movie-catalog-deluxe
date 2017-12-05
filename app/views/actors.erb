@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Actors</title>
+  <link rel="stylesheet" href="./stylesheets/server.css">
+</head>
+
+<body>
+  <h1> Actors </h1><br><br>
+  <a href="/movies">All Movies</a>&emsp;
+  <a href="/actors">All Actors</a>
+
+  <br><br>
+  <ul>
+    <% @actors.each do |actor| %>
+      <li><a href="/actors/<%= actor["id"] %>"><%= actor["name"] %></a></li>
+    <% end %>
+  </ul><br><br>
+
+  <a href="/movies">All Movies</a>&emsp;
+  <a href="/actors">All Actors</a>
+</body>
+</html>
